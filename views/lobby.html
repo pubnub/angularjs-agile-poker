@@ -1,0 +1,78 @@
+<section>
+<div class='row'>
+<div class='col-md-2'></div>
+<div class='col-md-8'>
+<div class='row'>
+<div class='col-md-9'>
+<h3 class='marker'>
+<i class='fa fa-home'></i>
+Agile Poker: Lobby
+</h3>
+<p>
+A
+<a href='http://pubnub.github.io/angular-js/'>PubNub AngularJS API</a>
+Sample App
+</p>
+</div>
+<div class='col-md-3'>
+<br>
+<h4 class='marker pull-right'>
+<a href='#/login'>
+Sign Out
+<i class='fa fa-sign-out'></i>
+</a>
+</h4>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section style='border-top:1px solid #e0e0e0'>
+<div class='row'>
+<div class='col-md-2'></div>
+<div class='col-md-8'>
+<h3 class='marker'>
+<i class='fa fa-spinner fa-spin'></i>
+Choose a Room,
+</h3>
+<div class='alert'>
+<ul class='list-unstyled list-inline'>
+<li class='roomlabel' ng-repeat='room in data.rooms'>
+<a class='btn btn-block btn-info' href="{{'#/rooms/' + room.name}}">
+<i class='fa fa-comments'></i>
+{{room.name}}
+</a>
+</li>
+<li class='roomlabel'>
+<a class='btn btn-primary' href='' ng-click='data.showCreate = !data.showCreate'>
+<i class='fa fa-magic'></i>
+Create new...
+</a>
+</li>
+</ul>
+</div>
+<div ng-show='data.showCreate'>
+<h4 class='marker'>Create New Room</h4>
+<form ng-submit='createRoom()'>
+<div class='input-group'>
+<input class='input-sm form-control' ng-model='data.new_room.name' placeholder='Room Name' type='text'>
+<span class='input-group-btn'>
+<input class='input-sm btn btn-default' type='submit' value='Go!'>
+</span>
+</div>
+<br>
+<br>
+</form>
+</div>
+</div>
+</div>
+</section>
+<section style='border-top:1px solid #e0e0e0'>
+<div class='row'>
+<div class='col-md-2'></div>
+<div class='col-md-8'>
+<h3 class='marker'>... or Hang Out & Chat</h3>
+<div ng-include src="'views/_chat.html'"></div>
+</div>
+</div>
+</section>

@@ -1,0 +1,103 @@
+<section style='background-color:#ffeeee;border-top:1px solid #c0c0c0'>
+<div class='row'>
+<div class='col-md-2'></div>
+<div class='col-md-6'>
+<h4 class='marker'>About this Application</h4>
+<p>
+For developers who have done software planning in an Agile process,
+this application should feel familiar. The application provides
+a collaborative space for developers to discuss, vote, and
+reach consensus on the complexity of a task. For example:
+</p>
+<ul class='fa-ul'>
+<li>
+<i class='fa fa-angle-double-right fa-border'></i>
+Leader: "The next task under discussion is WIDGET-193, adding a 'like' button to the widget interface"
+</li>
+<li>
+<i class='fa fa-angle-double-left fa-border'></i>
+Developer A: "Does this include the 'like' frontend and backend?"
+</li>
+<li>
+<i class='fa fa-angle-double-right fa-border'></i>
+Leader: "Yes - good clarification. Any other questions?"
+</li>
+<li>
+<i class='fa fa-angle-double-left fa-border'></i>
+Developers A, B, C, D: "Nope. All set!"
+</li>
+<li>
+<i class='fa fa-angle-double-right fa-border'></i>
+Leader: "OK, let's vote."
+</li>
+<li>
+<i class='fa fa-angle-double-left fa-border'></i>
+Developers D, B, C, A: /cast hidden votes/
+</li>
+<li>
+<i class='fa fa-angle-double-right fa-border'></i>
+Leader: "Ok, revealing the vote!"
+</li>
+<li>
+<i class='fa fa-angle-double-left fa-border'></i>
+(The vote is A:10, B:10, C:8, D:13)
+</li>
+<li>
+<i class='fa fa-angle-double-right fa-border'></i>
+Leader: "Looks like we have a consensus value of 10. Developers C and D, are you in agreement with that?"
+</li>
+<li>
+<i class='fa fa-angle-double-left fa-border'></i>
+(Developers C and D have a chance to explain)
+</li>
+<li>
+<i class='fa fa-angle-double-right fa-border'></i>
+Leader: "OK, looks like this is a 10. On to the next task!"
+<br>
+<small>(The leader could also reset the vote and start over)</small>
+</li>
+</ul>
+</div>
+</div>
+</section>
+<section style='background-color:#eedddd'>
+<div class='row'>
+<div class='col-md-2'></div>
+<div class='col-md-6'>
+<h4 class='marker'>The Planning Process</h4>
+<p>
+Users choose a handle before entering the application.
+</p>
+<p>
+Upon entering the application, users arrive at the Lobby where they
+can chat, create a new planning room, or enter an existing planning
+room.
+</p>
+<p>
+Planning rooms are where the real work of the application is done.
+The user who created the room is given the Admin privilege by default,
+allowing them to close and/or reset the vote at any time.
+</p>
+<p>
+In the planning room, users discuss the item that they are trying to
+estimate, then vote for the complexity of the item under discussion, from 0
+(lowest/trivial) to ∞ (highest/impossible). They may cast and change their
+votes at any time during the discussion; votes are hidden from view until
+the Admin user closes the vote and reveals the result. (The secret vote
+avoids biasing group opinion.)
+</p>
+<p>
+The Admin user closes the vote and displays the winning selection by clicking
+the button in the administrative controls. When the vote is closed, the application
+tallies the results to see if one selection has more votes than any other.
+If such a winner exists, that result is deemed the "consensus" value. If not,
+the result is "no consensus" - the Admin attempts consensus again by resetting
+the vote and reopening discussion.
+</p>
+<p>
+In the spirit of collaboration, the Admin privilege is not strictly enforced;
+any user may "take" the Admin privilege at any time.
+</p>
+</div>
+</div>
+</section>

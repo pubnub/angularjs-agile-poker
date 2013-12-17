@@ -1,0 +1,54 @@
+<section>
+<div class='row'>
+<div class='col-md-2'></div>
+<div class='col-md-8'>
+<div class='row'>
+<div class='col-md-9'>
+<h3 class='marker'>
+<i class='fa fa-comments-o'></i>
+Agile Poker: {{data.room}}
+</h3>
+<p>
+A
+<a href='http://pubnub.github.io/angular-js/'>PubNub AngularJS API</a>
+Sample App
+</p>
+</div>
+<div class='col-md-3'>
+<br>
+<h4 class='marker pull-right'>
+<a href='#/login'>
+Sign Out
+<i class='fa fa-sign-out'></i>
+</a>
+</h4>
+<br>
+<h4 class='marker pull-right'>
+<a href='#/lobby'>
+Lobby
+<i class='fa fa-home'></i>
+</a>
+</h4>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section style='border-top:1px solid #e0e0e0'>
+<div class='row'>
+<div class='col-md-2'></div>
+<div class='col-md-8'>
+<h2 class='marker'>1. Discuss...</h2>
+<div ng-include src="'views/_chat.html'"></div>
+</div>
+</div>
+</section>
+<section style='border-top:1px solid #e0e0e0'>
+<div class='row'>
+<div class='col-md-2'></div>
+<div class='col-md-8'>
+<h2 class='marker'>2. Vote!</h2>
+<div ng-include src="'views/_votes.html'"></div>
+</div>
+</div>
+</section>

@@ -1,0 +1,23 @@
+<div class='col-md-2'>
+<small class='marker'>Online Users</small>
+<ul class='list-unstyled'>
+<li ng-repeat='user in users'>
+<span class='label btn-mini userlabel' ng-class="{'label-default': user != data.username, 'label-info': (user == data.username &amp;&amp; user != data.admin), 'label-warning':(user == data.username &amp;&amp; user == data.admin)}">
+<i class='fa fa-user'></i>
+{{user}}
+</span>
+</li>
+</ul>
+</div>
+<div class='col-md-10'>
+<small class='marker'>Chat History</small>
+<form ng-submit='sendChat()'>
+<div class='input-group'>
+<input class='input-sm form-control' ng-model='data.message' type='text'>
+<span class='input-group-btn'>
+<input class='input-sm btn btn-default' type='submit' value='Send'>
+</span>
+</div>
+</form>
+<pre class='well chatbox' id='chat_history'></pre>
+</div>

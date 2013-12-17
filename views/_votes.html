@@ -1,0 +1,93 @@
+<div class='row'>
+<div class='col-md-12'>
+<div class='alert'>
+<h4 class='marker' ng-show='!data.reveal'>
+<i class='fa fa-spinner fa-spin'></i>
+Voting is open...
+</h4>
+<p ng-hide='data.reveal || data.myvote'>
+Cast your vote using the buttons below.
+</p>
+<h4 class='marker' ng-hide='!data.reveal'>
+<i class='fa fa-check-square-o'></i>
+Voting is closed.
+</h4>
+<br>
+<a class='btn padding votelabel' href='' ng-class="{'btn-primary':!data.reveal, 'btn-success':data.reveal &amp;&amp; data.consensus, 'btn-danger':data.reveal &amp;&amp; !data.consensus}" ng-repeat='vote in data.votes' style='margin-right:2px;margin-top:6px;'>
+<h1 class='marker' ng-show='vote &amp;&amp; vote.displayvalue != null'>{{vote.displayvalue}}</h1>
+<h1 class='marker' ng-show='vote &amp;&amp; vote.displayvalue == null'>
+<i class='fa fa-thumbs-up'></i>
+</h1>
+<h1 class='marker' ng-hide='vote'>
+<i class='fa fa-spinner'></i>
+</h1>
+<small>{{vote.username}}</small>
+</a>
+<h2 class='marker' ng-show='data.reveal &amp;&amp; !data.consensus'>
+Consensus not reached.
+<i class='fa fa-meh-o'></i>
+</h2>
+<h2 class='marker' ng-show='data.reveal &amp;&amp; data.consensus'>
+Consensus reached! {{data.consensus_value}}
+<i class='fa fa-smile-o'></i>
+</h2>
+</div>
+</div>
+</div>
+<div class='row'>
+<div class='col-md-7'>
+<div class='alert alertWhite alert-primary'>
+<div class='btn-group'>
+<h6 class='marker' ng-show='!data.reveal'>
+<i class='fa fa-edit'></i>
+Cast your vote here!
+</h6>
+<h6 class='marker' ng-hide='!data.reveal'>Voting is over (for now).</h6>
+<ul class='list-unstyled list-inline'>
+<li ng-repeat='value in data.votevalues' style='margin-right:2px;margin-top:6px;padding-left:0px;padding-right:0px'>
+<a class='btn' href='' ng-class="{'btn-primary':!data.reveal, 'btn-default':data.reveal}" ng-click='vote(value)' ng-disabled='{{data.reveal}}'>{{value}}</a>
+</li>
+<li style='margin-right:2px;margin-top:6px;padding-left:0px;padding-right:0px'>
+<a class='btn' href='' ng-class="{'btn-primary':!data.reveal, 'btn-default':data.reveal}" ng-click="vote('∞')" ng-disabled='{{data.reveal}}'>∞</a>
+</li>
+</ul>
+<p>
+<small>Zero = the most trivial task, Infinity = task is impossible.</small>
+</p>
+</div>
+</div>
+</div>
+<div class='col-md-5'>
+<div class='alert alert-default'>
+<h6 class='marker'>
+<i class='fa fa-lock' ng-show='isAdmin()'></i>
+<i class='fa fa-unlock' ng-hide='isAdmin()'></i>
+Admin Control
+</h6>
+<div ng-show='isAdmin()'>
+<a class='btn btn-warning btn-block' href='' ng-click='reveal()' ng-show='!data.reveal'>
+<i class='fa fa-gavel'></i>
+Close Voting & REVEAL!
+</a>
+<a class='btn btn-info btn-block' href='' ng-click='reset()'>
+<i class='fa fa-trash-o'></i>
+Reset Voting
+</a>
+</div>
+<div ng-hide='isAdmin()'>
+<p>
+<small>
+You are not Admin.
+The Admin for this room is {{data.admin || 'nobody'}}.
+</small>
+</p>
+<a class='btn btn-danger btn-block' href='' ng-click='takeAdmin()'>Take Admin control</a>
+<p>
+<small>
+Admin allows you to close voting or reset the vote.
+</small>
+</p>
+</div>
+</div>
+</div>
+</div>
