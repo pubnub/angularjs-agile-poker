@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Agile Poker - Powered by PubNub Real-time Network</title>
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/flat-ui.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+    <link href='http://fonts.googleapis.com/css?family=Permanent+Marker' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="styles/main.css">
+  </head>
+  <body ng-app="AgilePoker">
+	  <div ng-include src="'views/_nav.html'"></div>
+    <div ng-view></div>
+
+    <script src="https://cdn.pubnub.com/pubnub.min.js"></script>
+    <script src="https://cdn.pubnub.com/pubnub-crypto.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script>
+
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+    <script src="scripts/app.js"></script>
+    <script src="scripts/pubnub-angular.js"></script>
+
+
+    <div ng-include src="'views/_content.html'"></div>
+    <div ng-include src="'views/_footer.html'"></div>
+  </body>
+</html>
