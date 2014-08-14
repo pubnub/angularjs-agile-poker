@@ -12,6 +12,12 @@
 
 .col-md-2
   %br 
+  %small.marker Online Users
+  %ul.list-unstyled
+    %li(ng-repeat="user in users")
+      %span.label.btn-mini.userlabel(ng-class="{'label-default': user != data.username, 'label-info': (user == data.username && user != data.admin), 'label-warning':(user == data.username && user == data.admin)}")
+        %i.fa.fa-user
+        {{user}}
   %ul.list-unstyled
     %li
       %a(href="#/lobby")
@@ -21,13 +27,7 @@
       %a(href="#/login")
         %i.fa.fa-sign-out
           Sign Out
-  %small.marker Online Users
-  %ul.list-unstyled
-    %li(ng-repeat="user in users")
-      %span.label.btn-mini.userlabel(ng-class="{'label-default': user != data.username, 'label-info': (user == data.username && user != data.admin), 'label-warning':(user == data.username && user == data.admin)}")
-        %i.fa.fa-user
-        {{user}}
-        
+          
 
 
 

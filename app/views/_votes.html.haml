@@ -1,46 +1,52 @@
-.row
-  .col-md-10
-    %h6.marker(ng-show='!data.reveal')
-      %i.fa.fa-check-square-o
-      Cast your vote
-    .alert.alertWhite.alert-primary
-      .btn-group
-        %h6.marker(ng-hide='!data.reveal') Voting is over (for now)
-
-        %ul.list-unstyled.list-inline
-          %li(style="margin-right:2px;margin-top:6px;padding-left:0px;padding-right:0px" ng-repeat='value in data.votevalues')
-            %a.btn(href='' ng-click='vote(value)' ng-class='{active: data.myvote == value}' ng-class="{'btn-primary':!data.reveal, 'btn-default':data.reveal}" ng-disabled="{{data.reveal}}") {{value}}
-          %li(style="margin-right:2px;margin-top:6px;padding-left:0px;padding-right:0px")
-            %a.btn(href='' ng-click="vote('∞')" ng-class="{active: data.myvote == '∞'}" ng-class="{'btn-primary':!data.reveal, 'btn-default':data.reveal}" ng-disabled="{{data.reveal}}") ∞
-
-        %p
-          %small 0 = the most trivial task, ∞ = task is impossible
-.row
-  .col-md-10
-    %h6.marker(ng-show='!data.reveal')
-      %i.fa.fa-gavel
-      Voting is open
-    .alert
-      %p(ng-hide='data.reveal || data.myvote')
-
-      %h4.marker(ng-hide='!data.reveal')
+%section
+  .row
+    .col-md-10
+      %h6.marker(ng-show='!data.reveal')
         %i.fa.fa-check-square-o
-        Voting is now closed
-      
-      %br
+        Cast your vote
+        %h6.marker(ng-hide='!data.reveal') 
+          %i.fa.fa-ban
+          Voting is over (for now)
+      .alert.alertWhite.alert-primary
+        .btn-group
+          
+          %ul.list-unstyled.list-inline
+            %li(style="margin-right:2px;margin-top:6px;padding-left:0px;padding-right:0px" ng-repeat='value in data.votevalues')
+              %a.btn(href='' ng-click='vote(value)' ng-class='{active: data.myvote == value}' ng-class="{'btn-primary':!data.reveal, 'btn-default':data.reveal}" ng-disabled="{{data.reveal}}") {{value}}
+            %li(style="margin-right:2px;margin-top:6px;padding-left:0px;padding-right:0px")
+              %a.btn(href='' ng-click="vote('∞')" ng-class="{active: data.myvote == '∞'}" ng-class="{'btn-primary':!data.reveal, 'btn-default':data.reveal}" ng-disabled="{{data.reveal}}") ∞
 
-      %a.btn.padding.votelabel(ng-repeat='vote in data.votes' href='' ng-class="{'btn-primary':!data.reveal, 'btn-success':data.reveal && data.consensus, 'btn-danger':data.reveal && !data.consensus}" style="margin-right:2px;margin-top:6px;")
-        %h1.marker(ng-show='vote && vote.displayvalue != null') {{vote.displayvalue}}
-        %h1.marker(ng-show='vote && vote.displayvalue == null')
-          %i.fa.fa-thumbs-up
-        %h1.marker(ng-hide='vote')
-          %i.fa.fa-spinner
-        %small {{vote.username}}
-      %h2.marker(ng-show='data.reveal && !data.consensus')
-        Consensus not reached.
-      %h2.marker(ng-show='data.reveal && data.consensus')
-        Consensus reached: {{data.consensus_value}}
+          %p
+            %small 0 = the most trivial task, ∞ = task is impossible
+%section
+  .row
+    .col-md-10
+      %h6.marker(ng-show='!data.reveal')
+        %i.fa.fa-gavel
+        Voting is open
+        %h4.marker(ng-hide='!data.reveal')
+          %i.fa.fa-gavel
+          Voting is now closed
+      .alert
+        %p(ng-hide='data.reveal || data.myvote')
 
+     
+        
+        %br
+
+        %a.btn.padding.votelabel(ng-repeat='vote in data.votes' href='' ng-class="{'btn-primary':!data.reveal, 'btn-success':data.reveal && data.consensus, 'btn-danger':data.reveal && !data.consensus}" style="margin-right:2px;margin-top:6px;")
+          %h1.marker(ng-show='vote && vote.displayvalue != null') {{vote.displayvalue}}
+          %h1.marker(ng-show='vote && vote.displayvalue == null')
+            %i.fa.fa-thumbs-up
+          %h1.marker(ng-hide='vote')
+            %i.fa.fa-spinner
+          %small {{vote.username}}
+        %h2.marker(ng-show='data.reveal && !data.consensus')
+          Consensus not reached.
+        %h2.marker(ng-show='data.reveal && data.consensus')
+          Consensus reached: {{data.consensus_value}}
+
+%section
   .col-md-10
     %h6.marker
       %i.fa.fa-lock(ng-show='isAdmin()')

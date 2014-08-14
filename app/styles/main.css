@@ -4,6 +4,10 @@ body {
 	font-family:"Lato";
 }
 
+section {
+  padding: 10px;
+}
+
 p {
 	font-family:"Lato";
 }
