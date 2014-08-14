@@ -1,15 +1,31 @@
 .row
-  .col-md-12
+  .col-md-10
+    %h6.marker(ng-show='!data.reveal')
+      %i.fa.fa-check-square-o
+      Cast your vote
+    .alert.alertWhite.alert-primary
+      .btn-group
+        %h6.marker(ng-hide='!data.reveal') Voting is over (for now)
+
+        %ul.list-unstyled.list-inline
+          %li(style="margin-right:2px;margin-top:6px;padding-left:0px;padding-right:0px" ng-repeat='value in data.votevalues')
+            %a.btn(href='' ng-click='vote(value)' ng-class='{active: data.myvote == value}' ng-class="{'btn-primary':!data.reveal, 'btn-default':data.reveal}" ng-disabled="{{data.reveal}}") {{value}}
+          %li(style="margin-right:2px;margin-top:6px;padding-left:0px;padding-right:0px")
+            %a.btn(href='' ng-click="vote('∞')" ng-class="{active: data.myvote == '∞'}" ng-class="{'btn-primary':!data.reveal, 'btn-default':data.reveal}" ng-disabled="{{data.reveal}}") ∞
+
+        %p
+          %small 0 = the most trivial task, ∞ = task is impossible
+.row
+  .col-md-10
+    %h6.marker(ng-show='!data.reveal')
+      %i.fa.fa-gavel
+      Voting is open
     .alert
-      %h4.marker(ng-show='!data.reveal')
-        %i.fa.fa-spinner.fa-spin
-        Voting is open...
       %p(ng-hide='data.reveal || data.myvote')
-        Cast your vote using the buttons below.
 
       %h4.marker(ng-hide='!data.reveal')
         %i.fa.fa-check-square-o
-        Voting is closed.
+        Voting is now closed
       
       %br
 
@@ -22,50 +38,27 @@
         %small {{vote.username}}
       %h2.marker(ng-show='data.reveal && !data.consensus')
         Consensus not reached.
-        %i.fa.fa-meh-o
       %h2.marker(ng-show='data.reveal && data.consensus')
-        Consensus reached! {{data.consensus_value}}
-        %i.fa.fa-smile-o
+        Consensus reached: {{data.consensus_value}}
 
-.row
-  .col-md-7
-    .alert.alertWhite.alert-primary
-      .btn-group
-        %h6.marker(ng-show='!data.reveal')
-          %i.fa.fa-edit
-          Cast your vote here!
-        %h6.marker(ng-hide='!data.reveal') Voting is over (for now).
-
-        %ul.list-unstyled.list-inline
-          %li(style="margin-right:2px;margin-top:6px;padding-left:0px;padding-right:0px" ng-repeat='value in data.votevalues')
-            %a.btn(href='' ng-click='vote(value)' ng-class='{active: data.myvote == value}' ng-class="{'btn-primary':!data.reveal, 'btn-default':data.reveal}" ng-disabled="{{data.reveal}}") {{value}}
-          %li(style="margin-right:2px;margin-top:6px;padding-left:0px;padding-right:0px")
-            %a.btn(href='' ng-click="vote('∞')" ng-class="{active: data.myvote == '∞'}" ng-class="{'btn-primary':!data.reveal, 'btn-default':data.reveal}" ng-disabled="{{data.reveal}}") ∞
-
-        %p
-          %small Zero = the most trivial task, Infinity = task is impossible.
-
-  .col-md-5
+  .col-md-10
+    %h6.marker
+      %i.fa.fa-lock(ng-show='isAdmin()')
+      %i.fa.fa-unlock(ng-hide='isAdmin()')
+      Admin Control
     .alert.alert-default
-      %h6.marker
-        %i.fa.fa-lock(ng-show='isAdmin()')
-        %i.fa.fa-unlock(ng-hide='isAdmin()')
-        Admin Control
-
       %div(ng-show='isAdmin()')
         %a.btn.btn-warning.btn-block(ng-show='!data.reveal' href='' ng-click='reveal()')
-          %i.fa.fa-gavel
-          Close Voting & REVEAL!
+          %i.fa.fa-bar-chart-o
+          Close Voting and Reveal Consensus
         %a.btn.btn-info.btn-block(href='' ng-click='reset()')
-          %i.fa.fa-trash-o
+          %i.fa.fa-refresh
           Reset Voting
 
       %div(ng-hide='isAdmin()')
         %p
           %small
-            You are not Admin.
-            The Admin for this room is {{data.admin || 'nobody'}}.
-        %a.btn.btn-danger.btn-block(href='' ng-click='takeAdmin()') Take Admin control
-        %p
-          %small
-            Admin allows you to close voting or reset the vote.
+            Admin allows you to close and reset voting.
+            The current admin for this room is {{data.admin || 'nobody'}}.
+        %a.btn.btn-danger.btn-block(href='' ng-click='takeAdmin()') Take admin control
+            

@@ -1,14 +1,8 @@
-
-.col-md-2
-  %small.marker Online Users
-  %ul.list-unstyled
-    %li(ng-repeat="user in users")
-      %span.label.btn-mini.userlabel(ng-class="{'label-default': user != data.username, 'label-info': (user == data.username && user != data.admin), 'label-warning':(user == data.username && user == data.admin)}")
-        %i.fa.fa-user
-        {{user}}
-
 .col-md-10
-  %small.marker Chat History
+  %h6.marker
+    %i.fa.fa-comments-o
+    Chat History  
+  %pre#chat_history.well.chatbox
 
   %form(ng-submit='sendChat()')
     .input-group
@@ -16,4 +10,24 @@
       %span.input-group-btn
         %input.input-sm.btn.btn-default(type='submit' value='Send')
 
-  %pre#chat_history.well.chatbox
+.col-md-2
+  %br 
+  %ul.list-unstyled
+    %li
+      %a(href="#/lobby")
+        %i.fa.fa-home
+          Lobby
+    %li
+      %a(href="#/login")
+        %i.fa.fa-sign-out
+          Sign Out
+  %small.marker Online Users
+  %ul.list-unstyled
+    %li(ng-repeat="user in users")
+      %span.label.btn-mini.userlabel(ng-class="{'label-default': user != data.username, 'label-info': (user == data.username && user != data.admin), 'label-warning':(user == data.username && user == data.admin)}")
+        %i.fa.fa-user
+        {{user}}
+        
+
+
+

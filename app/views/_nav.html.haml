@@ -5,21 +5,31 @@
     .col-md-3
       .navbar-header
         %p.brandP
-          %a(href='http://pubnub.com' style='text-decoration:none')
+          %a(href='http://pubnub.com' target="_blank" style='text-decoration:none')
             %img(src='images/pubnub-large.png' height='30px')
           &nbsp;&nbsp;&nbsp;
           +
           &nbsp;&nbsp;&nbsp;
-          %a(href='http://angularjs.org' style='text-decoration:none')
+          %a(href='http://angularjs.org' target="_blank" style='text-decoration:none')
             %img(src='http://angularjs.org/img/AngularJS-large.png' height='30px')
-    .col-md-5
+    .col-md-7
       %ul.nav.navbar-nav.pull-right
         %li.active
-          %a(href="") Agile Poker
-        %li
-          %a(href="https://github.com/pubnub/angular-js") PubNub AngularJS API
-        %li
-          %a(href="https://github.com/pubnub/angularjs-agile-poker")
+          %a(href="https://github.com/pubnub/pubnub-angular/blob/master/README.asciidoc" target="_blank")
+            %i.fa.fa-book
+            Docs
+        %li.active
+          %a(href="https://github.com/pubnub/angularjs-agile-poker" target="_blank")
             %i.fa.fa-github
-            Code @ GitHub
+            Source Code
+        %li.active
+          %a(alt="PubNub Real-Time Network Twitter" target="pntwitter" href="http://twitter.com/PubNub")
+            %i.fa.fa-twitter 
+            PubNub News
+        %li.active
+          %a(alt="PubNub Real-Time Network" target="freetrial" href="http://www.pubnub.com/free-trial")
+            %i.fa.fa-code
+            PubNub Trial
+        %li
+        
 

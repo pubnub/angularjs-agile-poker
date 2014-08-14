@@ -5,55 +5,40 @@
     .col-md-5
       .row
         .col-md-12
-          .row
-            .col-md-2
-              %img.pull-left(src='images/Watches_2x.png' height='96px' style='margin-top:40px')
-            .col-md-10
-              %h1.marker Agile Poker
-              %small
-                A
-                %a(href="http://pubnub.github.io/angular-js/") PubNub AngularJS API
-                Sample App
-          .row
+          %h1.marker
+            Agile Poker:
+          %h4
+            A
+            %a(href='http://en.wikipedia.org/wiki/Planning_poker' target='_blank') collaborative task estimation
+            tool
+%section
+  .row
+    .col-md-2
+    .col-md-5
+      .row
+        .col-md-12
+          %h5 It's easy to get started:
+          %ol
+            %h6.fa.fa-users
+              Rally a team together
             %br
-            %p
-              Agile Poker is a collaborative task estimation
-              tool for agile teams built with
-              %a(href='http://angularjs.org') AngularJS
-              and powered by
-              %a(href='http://pubnub.com') PubNub
-              global real-time communication infrastructure.
-            .row
-              .col-md-8
-                %h6 Here's how it works:
-                %ol
-                  %li Rally a team together
-                  %li Sign in & create a room for your estimating
-                  %li Discuss & Vote to determine the sizing
-                  %li Reveal votes to see if there's consensus!
-              .col-md-4
-                %img.pull-left(src='images/Clipboard_2x.png' height='160px')
-            %p
-              %small
-                For more information about planning poker and software estimation, click
-                %a(href='http://en.wikipedia.org/wiki/Planning_poker') here
-                \.
+            %h6.fa.fa-sign-in
+              Sign in
+            %br
+            %h6.fa.fa-bullhorn
+              Join a room
+            %br
+            %h6.fa.fa-comments-o
+              Discuss and vote
+            %br
+            %h6.fa.fa-bar-chart-o
+              Reveal the consensus
+            %br
 
-    .col-md-3
-      %br
-      .alert.alert-info
-        %h4.marker(style="white-space:nowrap")
-          %i.fa.fa-spinner.fa-spin
-          Sign in to continue
-
-        %form(ng-submit="join()")
-          %ul.list-unstyled
-            %li
-              %label
-                Username
-            %li
-              %input.input-lg.input-block.form-control(type="text" ng-model='data.username' style="width:100%;margin-bottom:10px")
-            %li
-              %button.btn.btn-block.btn-primary(type="submit" style="width:100%")
-                %i.fa.fa-sign-in
-                Join
+          .col-md-10
+            .alert.alert-info
+              %h4.marker(style="white-space:nowrap")
+              %form(ng-submit="join()")
+                %input.input-lg.input-block.form-control(type="text" ng-model='data.username' style="width:100%;margin-bottom:10px")
+                %button.btn.btn-block.btn-primary(type="submit" style="width:100%")
+                  Sign In
