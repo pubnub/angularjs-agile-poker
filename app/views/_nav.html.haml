@@ -1,4 +1,3 @@
-
 .top-menu.navbar.navbar-default
   .row
     .col-md-2
@@ -15,21 +14,28 @@
     .col-md-7
       %ul.nav.navbar-nav.pull-right
         %li.active
+          %a(href="{{'#/intro/'}}")
+            %i.fa.fa-youtube-play
+            Demo
+        %li.active
+          %a(alt="PubNub Real-Time Network Twitter" target="pntwitter" href="http://twitter.com/PubNub")
+            %i.fa.fa-twitter 
+            News
+        %li.active
+          %a(alt="PubNub Real-Time Network" target="freetrial" href="http://www.pubnub.com/free-trial")
+            %i.fa.fa-code
+            Trial
+        %li.active
           %a(href="https://github.com/pubnub/pubnub-angular/blob/master/README.asciidoc" target="_blank")
             %i.fa.fa-book
             Docs
         %li.active
           %a(href="https://github.com/pubnub/angularjs-agile-poker" target="_blank")
             %i.fa.fa-github
-            Source Code
+            Code
         %li.active
-          %a(alt="PubNub Real-Time Network Twitter" target="pntwitter" href="http://twitter.com/PubNub")
-            %i.fa.fa-twitter 
-            PubNub News
-        %li.active
-          %a(alt="PubNub Real-Time Network" target="freetrial" href="http://www.pubnub.com/free-trial")
-            %i.fa.fa-code
-            PubNub Trial
-        %li
+          %a(href="{{'#/login/'}}")
+            %i.fa.fa-sign-in
+            Sign In
         
 
