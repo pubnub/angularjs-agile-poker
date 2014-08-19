@@ -2,6 +2,7 @@
   "name": "agile-poker",
   "version": "0.0.0",
   "dependencies": {
+    "angular-youtube-mb": "~0.0.4"
   },
   "devDependencies": {}
 }
