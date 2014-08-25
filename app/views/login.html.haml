@@ -3,42 +3,43 @@
     .col-md-2
     .col-md-5
       .row
-        .col-md-12
+        .col-md-10
           %h1.marker
             Agile Poker:
           %h4
             A
             %a(href='http://en.wikipedia.org/wiki/Planning_poker' target='_blank') collaborative task estimation
             tool that provides a space for developers to discuss, vote, and reach consensus on the complexity of a task.
-
-
-  .row
-    .col-md-2
-    .col-md-5
+   
       .row
         .col-md-12
           %h5 It's easy to get started:
-          %ol
-            %h6.fa.fa-users
-              Rally a team together
-            %br
-            %h6.fa.fa-sign-in
-              Sign in
-            %br
-            %h6.fa.fa-bullhorn
-              Join a room
-            %br
-            %h6.fa.fa-comments-o
-              Discuss and vote
-            %br
-            %h6.fa.fa-bar-chart-o
-              Reveal the consensus
-            %br
+          %h6.fa.fa-users
+          Rally a team together
+          %br
+          %h6.fa.fa-sign-in
+          Sign in
+          %br
+          %h6.fa.fa-bullhorn
+          Join a room
+          %br
+          %h6.fa.fa-comments-o
+          Discuss and vote
+          %br
+          %h6.fa.fa-bar-chart-o
+          Reveal the consensus
 
-          .col-md-10
-            .alert.alert-info
-              %h4.marker(style="white-space:nowrap")
-              %form(ng-submit="join()")
-                %input.input-lg.input-block.form-control(type="text" ng-model='data.username' style="width:100%;margin-bottom:10px")
-                %button.btn.btn-block.btn-primary(type="submit" style="width:100%")
-                  Sign In
+
+    .col-md-3
+      %br
+      %br
+      %img(src='images/agilepoker.png')
+      %br
+      %br
+      .alert.alert-info
+
+        %h4.marker(style="white-space:nowrap")
+        %form(ng-submit="join()")
+          %input.input-lg.input-block.form-control(type="text" ng-model='data.username' style="width:100%;margin-bottom:10px")
+          %button.btn.btn-block.btn-primary(type="submit" style="width:100%")
+            Sign In
