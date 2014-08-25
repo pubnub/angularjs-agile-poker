@@ -1,0 +1,95 @@
+
+%section(style="padding-top:0px;background-color:#ffffff")
+  .row
+    .col-md-2
+    .col-md-5
+      .row
+        .col-md-12
+          %h1.marker
+            Agile Poker
+%section(style="border-top:1px solid #e0e0e0")
+  .row
+    .col-md-2
+    .col-md-5
+      .row
+        .col-md-12
+          %p
+            This
+            %a(href='http://en.wikipedia.org/wiki/Planning_poker' target='_blank') collaborative task estimation
+            tool provides a space for developers to discuss, vote, and reach consensus on the complexity of a task.
+
+
+          %img(src='images/out.gif')
+          %br
+
+          %h5.marker
+            Lobby
+
+          %h6.fa.fa-user
+          Choose a username
+          %br
+          %h6.fa.fa-sign-in
+          Sign into the lobby
+          %br
+          %h6.fa.fa-comments-o
+          Chat in the lobby
+          %br
+          %h6.fa.fa-sign-in
+          Create or enter a planning room
+          
+          %h5.marker
+            Planning Rooms
+
+          %h6.fa.fa-gear
+          Assign an admin
+          %br
+          %h6.fa.fa-comments-o
+          Discuss the task
+          %br
+          %h6.fa.fa-pencil
+          Vote on the complexity of the task
+          %br
+          %h6.fa.fa-bar-chart-o
+          Reveal the voting consensus
+
+          %h5.marker Example
+          %div.chat-example
+            [Leader]: The next task under discussion is WIDGET-193, adding a 'like' button to the widget interface
+            %br
+            %br
+            [Developer A]: Does this include the 'like' frontend and backend?
+            %br 
+            %br
+            [Leader]: Yes - good clarification. Any other questions?
+            %br 
+            %br
+            [Developers A, B, C, D]: Nope. All set!
+            %br 
+            %br
+            [Leader]: OK, let's vote.
+            %br 
+            %br
+            [Developers D, B, C, A]: /cast hidden votes/
+            %br 
+            %br
+            [Leader]: Ok, revealing the vote!
+            %br 
+            %br
+            (The vote is A:10, B:10, C:8, D:13)
+            %br 
+            %br
+            [Leader]: Looks like we have a consensus value of 10. Developers C and D, are you in agreement with that?
+            %br 
+            %br
+            (Developers C and D have a chance to explain)
+            %br 
+            %br
+            [Leader]: OK, looks like this is a 10. On to the next task!
+            %br
+            %br
+            (The leader could also reset the vote and start over)
+          %br
+          %br
+          
+
+           

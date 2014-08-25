@@ -4,27 +4,15 @@
     .col-md-8
       .row
         .col-md-9
-          %h3.marker
-            %i.fa.fa-home
-            Agile Poker: Lobby
-          %p
-            A
-            %a(href="http://pubnub.github.io/angular-js/") PubNub AngularJS API
-            Sample App
-        .col-md-3
-          %br
-          %h4.marker.pull-right
-            %a(href="#/login")
-              Sign Out
-              %i.fa.fa-sign-out
+          %h1.marker
+            Agile Poker
 
 %section(style="border-top:1px solid #e0e0e0")
   .row
     .col-md-2
     .col-md-8
       %h3.marker
-        %i.fa.fa-spinner.fa-spin
-        Choose a Room,
+        Join a Task Room
       .alert
         %ul.list-unstyled.list-inline
           %li.roomlabel(ng-repeat="room in data.rooms")
@@ -34,8 +22,8 @@
 
           %li.roomlabel
             %a.btn.btn-primary(href="" ng-click='data.showCreate = !data.showCreate')
-              %i.fa.fa-magic
-              Create new...
+              %i.fa.fa-plus
+              New Room
 
       %div(ng-show='data.showCreate')
         %h4.marker Create New Room
@@ -45,12 +33,16 @@
             %span.input-group-btn
               %input.input-sm.btn.btn-default(type='submit' value='Go!')
 
-          %br
-          %br
+      %br
 
 %section(style="border-top:1px solid #e0e0e0")
   .row
     .col-md-2
     .col-md-8
-      %h3.marker ... or Hang Out & Chat
+      %h3.marker Lobby
       %div(ng-include=true src="'views/_chat.html'")
+ 
+      %br
+      %br
+
+
